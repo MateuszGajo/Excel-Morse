@@ -1,0 +1,8 @@
+.excel__container {
+  width: fit-content;
+}
+
+.excel__container__sum {
+  display: flex;
+  justify-content: flex-end;
+}
