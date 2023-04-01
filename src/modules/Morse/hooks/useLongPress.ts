@@ -1,6 +1,10 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Ascii } from "../type";
-import { SEPARATE_AS_WORD_MS, SEPARATE_AS_CHAR_MS } from "../constant";
+import {
+  SEPARATE_AS_WORD_MS,
+  SEPARATE_AS_CHAR_MS,
+  DASH_AFTER_HOLDING_MS,
+} from "../constant";
 
 export const useLongPress = (
   keys: Ascii[],
@@ -41,7 +45,7 @@ export const useLongPress = (
       startPress.current = Date.now();
     } else if (startPress.current) {
       const pressingTime = Date.now() - startPress.current;
-      if (pressingTime > 400) {
+      if (pressingTime > DASH_AFTER_HOLDING_MS) {
         debounce.newChar("-");
       } else {
         debounce.newChar(".");

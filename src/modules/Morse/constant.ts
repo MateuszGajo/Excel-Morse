@@ -39,5 +39,6 @@ export const MORSE_CODE = {
 
 export const MORSE_CODE_INVALID_CHAR = "#";
 
+export const DASH_AFTER_HOLDING_MS = 300;
 export const SEPARATE_AS_CHAR_MS = 600;
 export const SEPARATE_AS_WORD_MS = 1200;

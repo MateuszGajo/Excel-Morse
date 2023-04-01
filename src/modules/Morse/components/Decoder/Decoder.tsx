@@ -2,7 +2,11 @@ import { useState } from "react";
 import { Ascii } from "../../type";
 import { decodeMessage } from "../../utils/utils";
 import { useLongPress } from "../../hooks/useLongPress";
-import { SEPARATE_AS_CHAR_MS, SEPARATE_AS_WORD_MS } from "../../constant";
+import {
+  DASH_AFTER_HOLDING_MS,
+  SEPARATE_AS_CHAR_MS,
+  SEPARATE_AS_WORD_MS,
+} from "../../constant";
 
 const Dashboard = () => {
   const [message, setMessage] = useState("");
@@ -26,6 +30,7 @@ const Dashboard = () => {
       </button>
       <p>Message: {message}</p>
       <p>Message decoded: {decodeMessage(message)}</p>
+      <p>Is dash after holding for: {DASH_AFTER_HOLDING_MS}ms</p>
       <p>Separate as character after: {SEPARATE_AS_CHAR_MS}ms</p>
       <p>Separate as word after: {SEPARATE_AS_WORD_MS}ms</p>
     </div>
